@@ -1,0 +1,13 @@
+---
+Name: cookie-policy-notification
+Before: 'mysite/*'
+After: 'framework/*','cms/*'
+---
+
+Page_Controller:
+  extensions:
+    - CookiePolicy
+
+SiteConfig:
+  extensions:
+    - CookiePolicy_Settings
