@@ -1,0 +1,23 @@
+{
+    "name": "jelicanin/silverstripe-cookie-policy-notification",
+    "description": "SilverStripe Cookie Policy Notification Module",
+    "type": "silverstripe-module",
+    "homepage": "http://github.com/jelicanin/silverstripe-cookie-policy-notification",
+    "keywords": ["silverstripe", "cookie", "cookie-policy", "notification", "module", "cms"],
+    "license": "BSD-3-Clause",
+    "authors": [{
+        "name": "Milan jelicanin",
+        "email": "milan.jelicanin@fractas.com"
+    }],
+    "support": {
+        "issues": "http://github.com/jelicanin/silverstripe-cookie-policy-notification/issues"
+    },
+    "require": {
+        "silverstripe/cms": "~3.0",
+        "silverstripe/framework": "~3.0"
+    },
+    "extra": {
+        "installer-name": "silverstripe-cookie-policy-notification"
+    },
+    "target-dir": "cookie-policy-notification"
+}
