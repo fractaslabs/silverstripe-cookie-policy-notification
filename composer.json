@@ -16,7 +16,7 @@
         "silverstripe/framework": "~3.0"
     },
     "extra": {
-        "installer-name": "silverstripe-cookie-policy-notification"
+        "installer-name": "cookie-policy-notification"
     },
     "target-dir": "cookie-policy-notification"
 }
