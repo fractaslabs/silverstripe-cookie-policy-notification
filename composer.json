@@ -17,5 +17,6 @@
     },
     "extra": {
         "installer-name": "cookie-policy-notification"
-    }
+    },
+    "target-dir": "cookie-policy-notification"
 }
