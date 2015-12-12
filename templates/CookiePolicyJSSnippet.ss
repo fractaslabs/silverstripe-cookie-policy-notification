@@ -1,3 +1,3 @@
 $(document).ready(function() {
-	$('body').cookieNotify({btnText: '$CookiePolicyButtonTitle', text: '$CookiePolicyDescription', position: '$CookiePolicyPosition',});
+	$('body').cookieNotify({btnText: '$CookiePolicyButtonTitle', text: '$CookiePolicyDescription', position: '$CookiePolicyPosition'});
 });
