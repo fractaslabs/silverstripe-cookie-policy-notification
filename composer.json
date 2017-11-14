@@ -19,7 +19,7 @@
         "silverstripe/framework": "~3.0"
     },
     "suggest": {
-        "fractaslabs/silverstripe-googleanalytics": "Module that adds a ability to add multiple Google Analytics property IDs"
+        "fractas/googleanalytics": "Module that adds a ability to add multiple Google Analytics property IDs"
     },
     "extra": {
         "installer-name": "cookiepolicy"
