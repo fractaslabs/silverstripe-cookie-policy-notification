@@ -18,6 +18,8 @@ composer require "fractas/cookiepolicy" "^2.0"
 ```
 * Visit yoursite.com/dev/build?flush=1 to rebuild the database.
 * Visit yoursite.com/admin/settings/ and on Cookie Policy tab add a Content and Button text.
+![Cookie Policy Admin](https://github.com/fractaslabs/silverstripe-cookie-policy-notification/blob/master/docs/en/images/Cookie-policy-admin.png)
+
 
 ## Known Issues
 
