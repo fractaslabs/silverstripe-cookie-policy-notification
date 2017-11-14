@@ -1,26 +1,38 @@
 {
-    "name": "fractaslabs/silverstripe-cookie-policy-notification",
+    "name": "fractas/cookiepolicy",
     "description": "SilverStripe Cookie Policy Notification Module",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "homepage": "http://github.com/fractaslabs/silverstripe-cookie-policy-notification",
-    "license": "BSD License",
-    "keywords": ["silverstripe", "cookie", "cookie-policy", "notification", "module", "cms"],
-    "authors": [{
-        "name": "Milan jelicanin",
-        "email": "milan.jelicanin@fractas.com"
-    }],
+    "keywords": ["silverstripe", "cookie", "cookie policy", "notification", "module", "cms"],
+    "license": "BSD-3-Clause",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "support": {
         "issues": "http://github.com/fractaslabs/silverstripe-cookie-policy-notification/issues"
     },
+    "authors": [{
+        "name": "Milan Jelicanin",
+        "email": "milan.jelicanin@fractas.com"
+    }, {
+        "name": "Petar Simic",
+        "email": "petar.simic@fractas.com"
+    }],
     "require": {
-        "silverstripe/cms": "~3.0",
-        "silverstripe/framework": "~3.0"
+        "silverstripe/cms": "~4.0",
+        "silverstripe/framework": "~4.0"
     },
     "suggest": {
-        "fractaslabs/silverstripe-googleanalytics": "Module that adds a ability to add multiple Google Analytics property IDs"
+        "fractas/googleanalytics": "Module that adds a ability to add multiple Google Analytics property IDs"
     },
     "extra": {
-        "installer-name": "cookie-policy-notification"
+        "installer-name": "cookiepolicy",
+        "expose": [
+            "client/dist"
+        ]
     },
-    "target-dir": "cookie-policy-notification"
+    "autoload": {
+        "psr-4": {
+            "Fractas\\CookiePolicy\\": "src/"
+        }
+    }
 }

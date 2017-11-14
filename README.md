@@ -6,18 +6,22 @@
 
 
 ## Requirements
-* SilverStripe 3
+* SilverStripe CMS 4
+* SilverStripe Framework 4
 
 
 ## Installation Instructions
 
-* Place this directory in the root of your SilverStripe installation, rename the folder 'cookie-policy-notification'.
+* Install via Composer
+```
+composer require "fractas/cookiepolicy" "^2.0"
+```
 * Visit yoursite.com/dev/build?flush=1 to rebuild the database.
 * Visit yoursite.com/admin/settings/ and on Cookie Policy tab add a Content and Button text.
 
 ## Known Issues
 
-[GitHub Issue Tracker](https://github.com/jelicanin/silverstripe-cookie-policy-notification/issues)
+[GitHub Issue Tracker](https://github.com/fractaslabs/silverstripe-cookie-policy-notification/issues)
 
 
 ## Thanks

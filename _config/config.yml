@@ -1,13 +1,9 @@
 ---
 Name: cookie-policy-notification
-Before: 'mysite/*'
-After: 'framework/*','cms/*'
 ---
-
-Page_Controller:
+PageController:
   extensions:
-    - CookiePolicy
-
-SiteConfig:
+    - Fractas\CookiePolicy\CookiePolicy
+SilverStripe\SiteConfig\SiteConfig:
   extensions:
-    - CookiePolicy_Settings
+    - Fractas\CookiePolicy\CookiePolicySiteConfig
