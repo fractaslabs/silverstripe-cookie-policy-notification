@@ -1,5 +1,11 @@
 # SilverStripe Cookie Policy Notification Module
-*Simple & configurable SilverStripe plugin to notify users about cookie policies.*
+[![Latest Stable Version](https://poser.pugx.org/fractas/cookiepolicy/v/stable)](https://packagist.org/packages/fractas/cookiepolicy)
+[![Latest Unstable Version](https://poser.pugx.org/fractas/cookiepolicy/v/unstable)](https://packagist.org/packages/fractas/cookiepolicy)
+[![Total Downloads](https://poser.pugx.org/fractas/cookiepolicy/downloads)](https://packagist.org/packages/fractas/cookiepolicy)
+[![License](https://poser.pugx.org/fractas/cookiepolicy/license)](https://packagist.org/packages/fractas/cookiepolicy)
+
+## Overview
+Simple & configurable SilverStripe plugin to notify users about cookie policies.*
 
 ## Maintainer Contacts
 *  Milan Jelicanin [at] Fractas.com
