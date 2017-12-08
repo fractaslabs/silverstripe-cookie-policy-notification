@@ -1,9 +1,9 @@
 {
     "name": "fractas/cookiepolicy",
-    "description": "SilverStripe Cookie Policy Notification Module",
+    "description": "Simple and configurable SilverStripe module to notify users about cookie policies",
     "type": "silverstripe-vendormodule",
     "homepage": "http://github.com/fractaslabs/silverstripe-cookie-policy-notification",
-    "keywords": ["silverstripe", "cookie", "cookie policy", "notification", "module", "cms"],
+    "keywords": ["silverstripe", "cookie", "cookie policy", "notification", "cookie policy notification"],
     "license": "BSD-3-Clause",
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -18,14 +18,17 @@
         "email": "petar.simic@fractas.com"
     }],
     "require": {
-        "silverstripe/cms": "~4.0",
-        "silverstripe/framework": "~4.0"
+        "silverstripe/cms": "^4.0",
+        "silverstripe/framework": "^4.0",
+        "silverstripe/vendor-plugin": "^1.0"
     },
     "suggest": {
-        "fractas/googleanalytics": "Module that adds a ability to add multiple Google Analytics property IDs"
+        "fractas/googleanalytics": "SilverStripe module that adds a ability to add multiple Google Analytics property IDs"
     },
     "extra": {
-        "installer-name": "cookiepolicy",
+        "branch-alias": {
+            "dev-master": "2.x-dev"
+        },
         "expose": [
             "client/dist"
         ]
