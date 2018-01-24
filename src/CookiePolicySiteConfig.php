@@ -20,28 +20,28 @@ class CookiePolicySiteConfig extends DataExtension
         'CookiePolicyIsActive' => 'Boolean',
     );
 
+    /**
+     * Exclude fields from translating via Fluent config.
+     */
+    private static $field_exclude = [
+        'CookiePolicyPosition',
+        'CookiePolicyIsActive'
+    ];
+
     public function updateCMSFields(FieldList $fields)
     {
-        $fields->addFieldToTab(
-            'Root.CookiePolicy',
-            CheckboxField::create('CookiePolicyIsActive')
-                ->setTitle(_t('CookiePolicy.ISACTIVE', 'Cookie Policy Notification Is Active?'))
-        );
-        $fields->addFieldToTab(
-            'Root.CookiePolicy',
-            TextField::create('CookiePolicyButtonTitle')
-                ->setTitle(_t('CookiePolicy.BUTTONTITLE', 'Notification Button Title'))
-        );
-        $fields->addFieldToTab(
-            'Root.CookiePolicy',
-            HtmlEditorField::create('CookiePolicyDescription')
-                ->setTitle(_t('CookiePolicy.DESCRIPTION', 'Notification Description'))
-        );
-        $fields->addFieldToTab(
-            'Root.CookiePolicy',
-            DropdownField::create('CookiePolicyPosition')
-                ->setSource(singleton(SiteConfig::class)->dbObject('CookiePolicyPosition')->enumValues())
-                ->setTitle(_t('CookiePolicy.POSITION', 'Notification Position On Page'))
+        $fields->addFieldsToTab(
+            'Root.CookiePolicy', [
+                CheckboxField::create('CookiePolicyIsActive')
+                    ->setTitle(_t(__CLASS__.'IsActive', 'Cookie Policy Notification Is Active?')),
+                TextField::create('CookiePolicyButtonTitle')
+                    ->setTitle(_t(__CLASS__.'Buttontitle', 'Notification Button Title')),
+                HtmlEditorField::create('CookiePolicyDescription')
+                    ->setTitle(_t(__CLASS__.'Description', 'Notification Description')),
+                DropdownField::create('CookiePolicyPosition')
+                    ->setSource(singleton(SiteConfig::class)->dbObject('CookiePolicyPosition')->enumValues())
+                    ->setTitle(_t(__CLASS__.'Position', 'Notification Position On Page'))
+            ]
         );
     }
 }
