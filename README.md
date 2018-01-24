@@ -9,11 +9,17 @@ Simple & configurable SilverStripe plugin to notify users about cookie policies.
 
 ## Maintainer Contacts
 *  Milan Jelicanin [at] Fractas.com
+*  Petar Simic [at] Fractas.com
 
 
 ## Requirements
 * SilverStripe CMS 4
 * SilverStripe Framework 4
+
+
+## Version info
+The master branch of this module is currently aiming for SilverStripe 4.x compatibility
+- [SilverStripe 3.0+ compatible version](https://github.com/fractaslabs/silverstripe-cookie-policy-notification/tree/3.0)
 
 
 ## Installation Instructions
