@@ -24,7 +24,7 @@ class CookiePolicy extends Extension
         if (self::cookie_policy_notification_enabled()) {
             $cookiepolicyjssnippet = new ArrayData(array(
                 'CookiePolicyButtonTitle' => self::$current_site_config->CookiePolicyButtonTitle,
-                'CookiePolicyDescription' => self::$current_site_config->CookiePolicyDescription,
+                'CookiePolicyDescription' => self::$current_site_config->obj('CookiePolicyDescription'),
                 'CookiePolicyPosition' => self::$current_site_config->CookiePolicyPosition,
             ));
 
