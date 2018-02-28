@@ -2,15 +2,17 @@
 
 namespace Fractas\CookiePolicy;
 
+use SilverStripe\Core\Config\Config;
+use SilverStripe\Core\Extension;
 use SilverStripe\SiteConfig\SiteConfig;
 use SilverStripe\View\ArrayData;
 use SilverStripe\View\Requirements;
-use SilverStripe\Core\Extension;
 
 class CookiePolicy extends Extension
 {
-    public static $include_cookie_policy_notification = true;
-    public static $current_site_config = null;
+    private static $include_cookie_policy_notification = true;
+    private static $current_site_config = null;
+    private static $load_jquery = false;
 
     public function onBeforeInit()
     {
@@ -22,13 +24,15 @@ class CookiePolicy extends Extension
     public function onAfterInit()
     {
         if (self::cookie_policy_notification_enabled()) {
-            $cookiepolicyjssnippet = new ArrayData(array(
+            $cookiepolicyjssnippet = ArrayData::create([
                 'CookiePolicyButtonTitle' => self::$current_site_config->CookiePolicyButtonTitle,
                 'CookiePolicyDescription' => self::$current_site_config->obj('CookiePolicyDescription'),
                 'CookiePolicyPosition' => self::$current_site_config->CookiePolicyPosition,
-            ));
+            ]);
 
-            Requirements::javascript('silverstripe/admin:thirdparty/jquery/jquery.js');
+            if (Config::inst()->get(static::class, 'load_jquery')) {
+                Requirements::javascript('silverstripe/admin:thirdparty/jquery/jquery.js');
+            }
             Requirements::javascript('fractas/cookiepolicy:client/dist/javascript/jquery.cookie.policy.min.js');
             Requirements::customScript($cookiepolicyjssnippet->renderWith('CookiePolicyJSSnippet'));
         }
