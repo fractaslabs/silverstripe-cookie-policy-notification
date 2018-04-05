@@ -33,6 +33,20 @@ composer require "fractas/cookiepolicy" "^2.0"
 ![Cookie Policy Admin](https://github.com/fractaslabs/silverstripe-cookie-policy-notification/blob/master/docs/en/images/Cookie-policy-admin.png)
 
 
+## Usage with Fluent
+* Install [Fluent](https://github.com/tractorcow/silverstripe-fluent) on your project
+* Add to your YML configuration file an FluentExtension and these DB fields:
+```yml
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - 'TractorCow\Fluent\Extension\FluentExtension'
+  translate:
+    - 'CookiePolicyButtonTitle'
+    - 'CookiePolicyDescription'
+```
+* Visit yoursite.com/dev/build?flush=1 to rebuild the database.
+
+
 ## Known Issues
 
 [GitHub Issue Tracker](https://github.com/fractaslabs/silverstripe-cookie-policy-notification/issues)
