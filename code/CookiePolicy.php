@@ -23,7 +23,7 @@ class CookiePolicy extends Extension
             ));
 
             Requirements::javascript(THIRDPARTY_DIR.'/jquery/jquery.js');
-            Requirements::javascript('cookie-policy-notification/javascript/jquery.cookie.policy.min.js');
+            Requirements::javascript('cookiepolicy/javascript/jquery.cookie.policy.min.js');
             Requirements::customScript($cookiepolicyjssnippet->renderWith('CookiePolicyJSSnippet'));
         }
     }
