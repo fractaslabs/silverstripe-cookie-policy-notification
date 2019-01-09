@@ -126,10 +126,13 @@
         });
         // detect cookie
         $(this).ready(function() {
-            var cookie = $.cookie('cookie_policy'); // => "true";
+            var cookie = $.cookie('cookie_policy');
             if (!cookie) {
                 $('#cookie_container').show();
             }
         });
     }
+    $.getJSON($('base')[0].href + 'fetchcookiepolicy', function(data) {
+      $('body').cookieNotify({btnText: data.CookiePolicyButtonTitle, text: data.CookiePolicyDescription, position: data.CookiePolicyPosition});
+    });
 }(jQuery));

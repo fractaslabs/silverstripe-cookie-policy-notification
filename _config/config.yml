@@ -7,3 +7,11 @@ PageController:
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - Fractas\CookiePolicy\CookiePolicySiteConfig
+---
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    fetchcookiepolicy: Fractas\CookiePolicy\CookiePolicyController

@@ -9,7 +9,6 @@ Simple & configurable SilverStripe plugin to notify users about cookie policies.
 
 ## Maintainer Contacts
 *  Milan Jelicanin [at] Fractas.com
-*  Petar Simic [at] Fractas.com
 
 
 ## Requirements

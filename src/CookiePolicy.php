@@ -13,6 +13,8 @@ class CookiePolicy extends Extension
     private static $include_cookie_policy_notification = true;
     private static $current_site_config = null;
     private static $load_jquery = false;
+    private static $load_jquery_defer = false;
+    private static $load_script_defer = true;
 
     public function onBeforeInit()
     {
@@ -24,17 +26,18 @@ class CookiePolicy extends Extension
     public function onAfterInit()
     {
         if (self::cookie_policy_notification_enabled()) {
-            $cookiepolicyjssnippet = ArrayData::create([
-                'CookiePolicyButtonTitle' => self::$current_site_config->CookiePolicyButtonTitle,
-                'CookiePolicyDescription' => self::$current_site_config->obj('CookiePolicyDescription'),
-                'CookiePolicyPosition' => self::$current_site_config->CookiePolicyPosition,
-            ]);
-
             if (Config::inst()->get(static::class, 'load_jquery')) {
                 Requirements::javascript('silverstripe/admin:thirdparty/jquery/jquery.js');
             }
-            Requirements::javascript('fractas/cookiepolicy:client/dist/javascript/jquery.cookie.policy.min.js');
-            Requirements::customScript($cookiepolicyjssnippet->renderWith('CookiePolicyJSSnippet'));
+            if (Config::inst()->get(static::class, 'load_jquery_defer')) {
+                Requirements::javascript('silverstripe/admin:thirdparty/jquery/jquery.js', ['defer' => true]);
+            }
+
+            if (Config::inst()->get(static::class, 'load_script_defer')) {
+                Requirements::javascript('fractas/cookiepolicy:client/dist/javascript/jquery.cookie.policy.min.js', ['defer' => true]);
+            } else {
+                Requirements::javascript('fractas/cookiepolicy:client/dist/javascript/jquery.cookie.policy.min.js');
+            }
         }
     }
 
