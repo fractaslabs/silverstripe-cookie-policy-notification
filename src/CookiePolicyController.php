@@ -25,6 +25,7 @@ class CookiePolicyController extends Controller
             'CookiePolicyButtonTitle' => $this->owner->getCookiePolicyButtonTitle(),
             'CookiePolicyDescription' => $this->owner->getCookiePolicyDescription(),
             'CookiePolicyPosition' => $this->owner->getCookiePolicyPosition(),
+            'Reload' => $this->owner->getreload(),
         ]));
 
         $this->getResponse()->addHeader("Content-type", "application/json");
@@ -51,6 +52,11 @@ class CookiePolicyController extends Controller
     public function getCookiePolicyPosition()
     {
         return self::$current_site_config->CookiePolicyPosition;
+    }
+
+    public function getReload()
+    {
+        return Config::inst()->get(CookiePolicy::class, 'reload_on_accept');
     }
 
     public static function set_current_site_config($input)

@@ -105,7 +105,8 @@
             position: 'top', // info bar position
             leftPadding: '0', // info bar left spacing, accepts px or % values
             rightPadding: '0', // info bar right spacing, accepts px or % values
-            hideAnimation: 'fadeOut' // on click hide animation, options are fadeOut, slideUp
+            hideAnimation: 'fadeOut', // on click hide animation, options are fadeOut, slideUp
+            reload: false // force a page reload after save
         }, options);
         // create stylesheet
         $('head').append('<style>#cookie_container { display: none; position: fixed; ' + options.position + ': 0; left: ' + options.leftPadding + '; 	right: ' + options.rightPadding + '; z-index: 999; padding: 10px; background-color:' + options.bgColor + '; color:' + options.textColor + '; } .cookie_inner { width: 90%; margin: 0 auto; } .cookie_inner p { margin: 0; padding-top: 4px; } #setCookie { float: right; padding: 5px 10px; text-decoration: none; background-color: ' + options.btnColor + '; color: ' + options.btnTextColor + '; } #setCookie:hover { background-color: #AAAAAA !important; color: #000000 !important; }</style>');
@@ -123,6 +124,9 @@
             } else if (options.hideAnimation == 'slideUp') {
                 $('#cookie_container').slideUp();
             }
+            if (options.reload == true) {
+                window.location.reload();
+            }
         });
         // detect cookie
         $(this).ready(function() {
@@ -133,6 +137,7 @@
         });
     }
     $.getJSON($('base')[0].href + 'fetchcookiepolicy', function(data) {
-      $('body').cookieNotify({btnText: data.CookiePolicyButtonTitle, text: data.CookiePolicyDescription, position: data.CookiePolicyPosition});
+        console.log(data);
+      $('body').cookieNotify({btnText: data.CookiePolicyButtonTitle, text: data.CookiePolicyDescription, position: data.CookiePolicyPosition, reload: data.Reload});
     });
 }(jQuery));
