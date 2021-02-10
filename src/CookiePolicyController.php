@@ -25,7 +25,7 @@ class CookiePolicyController extends Controller
             'CookiePolicyButtonTitle' => $this->owner->getCookiePolicyButtonTitle(),
             'CookiePolicyDescription' => $this->owner->getCookiePolicyDescription(),
             'CookiePolicyPosition' => $this->owner->getCookiePolicyPosition(),
-            'Reload' => $this->owner->getreload(),
+            'Reload' => $this->getReload(),
         ]));
 
         $this->getResponse()->addHeader("Content-type", "application/json");

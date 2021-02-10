@@ -137,7 +137,6 @@
         });
     }
     $.getJSON($('base')[0].href + 'fetchcookiepolicy', function(data) {
-        console.log(data);
       $('body').cookieNotify({btnText: data.CookiePolicyButtonTitle, text: data.CookiePolicyDescription, position: data.CookiePolicyPosition, reload: data.Reload});
     });
 }(jQuery));
