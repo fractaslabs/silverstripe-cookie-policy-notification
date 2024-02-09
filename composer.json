@@ -20,7 +20,7 @@
     "require": {
         "silverstripe/cms": "^4.0 || ^5.0",
         "silverstripe/framework": "^4.0 || ^5.0",
-        "silverstripe/vendor-plugin": "^1.0"
+        "silverstripe/vendor-plugin": "^2.0"
     },
     "suggest": {
         "fractas/googleanalytics": "SilverStripe module that adds a ability to add multiple Google Analytics property IDs"
