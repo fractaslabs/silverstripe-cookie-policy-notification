@@ -37,5 +37,11 @@
         "psr-4": {
             "Fractas\\CookiePolicy\\": "src/"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/vendor-plugin": true
+        }
     }
 }
