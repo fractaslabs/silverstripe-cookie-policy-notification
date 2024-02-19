@@ -16,6 +16,15 @@ class CookiePolicy extends Extension
     private static $load_jquery_defer = false;
     private static $load_script_defer = true;
 
+    /**
+     * If true, the page will reload after setting the cookie.
+     *
+     * @config
+     *
+     * @var boolean
+     */
+    private static $reload_on_accept = false;
+
     public function onBeforeInit()
     {
         $siteConfig = SiteConfig::current_site_config();
